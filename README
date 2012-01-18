@@ -1,0 +1,42 @@
+[sfPlaceholderLabels - jQuery Content Placeholder Labels for Sitefinity 4.x]
+=======================================================
+Basic Installation:
+=============================
+Add links to the JS and CSS files to the master page
+--------------------------
+<link rel="stylesheet" type="text/css" href="/sfplaceholderlabels/style.css" />
+
+<script type="text/javascript" src="/sfplaceholderlabels/jquery.sfplaceholderlabels.min.js"></script>
+
+
+Example Usage:
+--------------------------
+$(function () {
+	$('#sfPageContainer').sfplaceholderlabels();
+});
+
+
+
+
+=============================
+To run the script ONLY in design mode:
+=============================
+Add this to the declarations section of your master page
+--------------------------
+<%@ Register Assembly="Telerik.Sitefinity" Namespace="Telerik.Sitefinity.Web.UI.PublicControls" TagPrefix="sf" %>
+
+
+Add this to the <head> section of your master page
+--------------------------
+<sf:CssEmbedControl ID="sfPlaceholderLabelsCSS" runat="server" Url="~/sfplaceholderlabels/style.css" Enabled="false" Visible="false" MediaType="screen"></sf:CssEmbedControl>
+
+ 
+Add this to the Page_Load of your code behind for the master page
+--------------------------
+if (this.IsDesignMode())
+{
+	this.sfPlaceholderLabelsCSS.Visible = true;
+	this.sfPlaceholderLabelsCSS.Enabled = true;
+	ScriptManager.GetCurrent(Page).Scripts.Add(new ScriptReference("/sfplaceholderlabels/jquery.sfplaceholderlabels.min.js"));
+	ScriptManager.RegisterStartupScript(this, this.GetType(), "sfPlaceholderLabels","$('#sfPageContainer').sfplaceholderlabels();", true);
+}
