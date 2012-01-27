@@ -3,10 +3,11 @@
 Release Notes
 --------------------------
 1.0.0 - Initial release
-1.1.0 - Added configurable options (initVisible, collapseEnabled, expandOnHide) and the ability to hide the labels with the 'z' key
+1.1.0 - Added configurable options (initVisible, collapseEnabled, expandOnHide)
 		Changed the cursor to a pointer when hovering over the expand/collapse control
 		Added a title to placeholders that have the label hidden
-		Added feature - pressing the 'z' key will toggle the visibility of the labels
+		Added the ability to toggle the visibility of the labels by pressing the 'z' key
+1.1.1 - Fixed a min-height bug that kept placeholders from shrinking when widgets were removed
 
 
 
