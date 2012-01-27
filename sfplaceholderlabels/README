@@ -1,5 +1,23 @@
 [sfPlaceholderLabels - jQuery Content Placeholder Labels for Sitefinity 4.x]
 =======================================================
+Release Notes
+--------------------------
+1.0.0 - Initial release
+1.1.0 - Added configurable options (initVisible, collapseEnabled, expandOnHide) and the ability to hide the labels with the 'z' key
+		Changed the cursor to a pointer when hovering over the expand/collapse control
+		Added a title to placeholders that have the label hidden
+		Added feature - pressing the 'z' key will toggle the visibility of the labels
+
+
+
+Options: (Default)
+=============================
+initVisible: true, // placeholder labels will be visible when the page loads
+collapseEnabled: true,  // expand/collapse control will be available
+expandOnHide: true, // when hiding the labels with the 'z' key, collapsed containers will be expanded
+
+
+
 Basic Installation:
 =============================
 Add links to the JS and CSS files to the master page
@@ -12,9 +30,12 @@ Add links to the JS and CSS files to the master page
 Example Usage:
 --------------------------
 $(function () {
-	$('#sfPageContainer').sfplaceholderlabels();
+	$('#sfPageContainer').sfplaceholderlabels({
+		initVisible: true,
+		collapseEnabled: true,
+		expandOnHide: true
+	});
 });
-
 
 
 
